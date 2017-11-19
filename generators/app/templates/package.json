@@ -1,18 +1,20 @@
 {
-  "name": "node-app",
-  "version": "1.0.0",
-  "description": "",
-  "main": "src/index.js",
+  "name": "<%= moduleName %>",
+  "version": "<%= moduleVersion %>",
+  "description": "<%= moduleDesc %>",
+  "main": "<%= buildDirectory %>/index.js",
   "scripts": {
-    "start": "node dist/index.js",
+    "start": "node <%= buildDirectory %>/index.js",
     "start-babel": "babel-node src/index.js",
-    "test": "mocha --require babel-core/register 'test/**/*.test.js'",
-    "build": "babel src -d dist",
+    "test":
+      "mocha --require babel-core/register '<%= testDirectory %>/**/*.test.js'",
+    "tdd": "npm test -- --watch",
+    "build": "babel src -d <%= buildDirectory %>",
     "dev": "nodemon --watch src --exec babel-node src/index.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "MIT",
+  "author": "<%= name %> <<%= email %>> (<%= website %>)",
+  "license": "<%= moduleLicense %>",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",

@@ -3,8 +3,8 @@
 
 ## Boilerplate
 
-The structure of the boilerplate is the following one:
-```
+The posible structures of the boilerplate are the following ones:
+```bash
 .
 ├── dist
 │   └── index.js
@@ -18,12 +18,26 @@ The structure of the boilerplate is the following one:
     └── basic.test.js
 ```
 
+```bash
+.
+├── dist
+│   └── index.js
+├── Dockerfile
+├── node_modules
+├── package.json
+├── package-lock.json
+├── src
+│   ├── basic.test.js
+│   └── index.js
+```
+
 And these are the scripts from the `package.json`:
 ```json
 "scripts": {
   "start": "node dist/index.js",
   "start-babel": "babel-node src/index.js",
   "test": "mocha --require babel-core/register 'test/**/*.test.js'",
+  "tdd": "npm test -- --watch",
   "build": "babel src -d dist",
   "dev": "nodemon --watch src --exec babel-node src/index.js"
 }
@@ -42,6 +56,12 @@ Then generate your new project:
 
 ```bash
 yo node-tdd
+```
+
+or let Yeoman to create the project directory:
+
+```bash
+yo node-tdd my-project
 ```
 
 ## Getting To Know Yeoman
