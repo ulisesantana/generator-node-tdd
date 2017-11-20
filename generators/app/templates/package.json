@@ -11,8 +11,6 @@
     "tdd": "npm test -- --watch",
     "build":
       "babel src -d <%= buildDirectory %> && cat <%= buildDirectory %>/index.js | nexe",
-    "build": "babel src -d dist && cat dist/index.js | nexe",
-
     "dev": "nodemon --watch src --exec babel-node src/index.js"
   },
   "keywords": [],
