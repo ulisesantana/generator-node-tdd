@@ -9,7 +9,10 @@
     "test":
       "mocha --require babel-core/register '<%= testDirectory %>/**/*.test.js'",
     "tdd": "npm test -- --watch",
-    "build": "babel src -d <%= buildDirectory %>",
+    "build":
+      "babel src -d <%= buildDirectory %> && cat <%= buildDirectory %>/index.js | nexe",
+    "build": "babel src -d dist && cat dist/index.js | nexe",
+
     "dev": "nodemon --watch src --exec babel-node src/index.js"
   },
   "keywords": [],
@@ -18,6 +21,7 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
+    "nexe": "^2.0.0-rc.20",
     "nodemon": "^1.12.1",
     "mocha": "^4.0.1"
   }
