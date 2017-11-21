@@ -35,12 +35,12 @@ The posible structures of the boilerplate are the following ones:
 And these are the scripts from the `package.json`:
 ```json
  "scripts": {
-    "start": "node <%= buildDirectory %>/index.js",
+    "start": "node dist/index.js",
     "start:babel": "babel-node src/index.js",
-    "test": "mocha --require babel-core/register '<%= testDirectory %>/**/*.test.js'",
+    "test": "mocha --require babel-core/register 'test/**/*.test.js'",
     "tdd": "npm test -- --watch",
-    "build": "babel src -d <%= buildDirectory %>",
-    "build:bytecode": "npm run build && nexe -i <%= buildDirectory %>/index.js -o <%= moduleName %>",
+    "build": "babel src -d dist",
+    "build:bytecode": "npm run build && nexe -i dist/index.js -o node-tdd",
     "dev": "nodemon --watch src --exec babel-node src/index.js"
   },
 ```
