@@ -5,16 +5,18 @@
   "main": "<%= buildDirectory %>/index.js",
   "scripts": {
     "start": "node <%= buildDirectory %>/index.js",
-    "start-babel": "babel-node src/index.js",
-    "test":
-      "mocha --require babel-core/register '<%= testDirectory %>/**/*.test.js'",
+    "start:babel": "babel-node src/index.js",
+    "test": "mocha --require babel-core/register '<%= testDirectory %>/**/*.test.js'",
     "tdd": "npm test -- --watch",
-    "build":
-      "babel src -d <%= buildDirectory %> && cat <%= buildDirectory %>/index.js | nexe",
+    "build": "babel src -d <%= buildDirectory %>",
+    "build:bytecode": "npm run build && nexe -i <%= buildDirectory %>/index.js -o <%= moduleName %>",
     "dev": "nodemon --watch src --exec babel-node src/index.js"
   },
-  "keywords": [],
-  "author": "<%= name %> <<%= email %>> (<%= website %>)",
+  "keywords": [
+    <% moduleKeywords.forEach(function(keyword, i, arr) { %>"<%= keyword %>"<% if (i !== arr.length - 1) { %>,
+    <% } %><% }); %>
+  ],  
+  "author": "<%= name %> <<%= email %>>",
   "license": "<%= moduleLicense %>",
   "devDependencies": {
     "babel-cli": "^6.26.0",

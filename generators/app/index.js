@@ -40,16 +40,10 @@ module.exports = class extends Generator {
         validate: ifEmpty('You have to provide email')
       },
       {
-        name: 'website',
-        message: 'Your website:',
-        store: true,
-        validate: ifEmpty('You have to provide website')
-      },
-      {
         name: 'moduleVersion',
         message: 'Preferred version to start:',
         store: true,
-        default: '0.0.0'
+        default: '0.1.0'
       },
       {
         name: 'moduleLicense',

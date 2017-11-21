@@ -1,5 +1,5 @@
 # generator-node-tdd [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
-> A boilerplate for NodeJS projects with TDD and Babel 
+> A boilerplate for NodeJS projects with Mocha and Babel 
 
 ## Boilerplate
 
@@ -21,26 +21,28 @@ The posible structures of the boilerplate are the following ones:
 ```bash
 .
 ├── dist
-│   └── index.js
+│   ├── basic.test.js
+│   └── index.js
 ├── Dockerfile
 ├── node_modules
 ├── package.json
 ├── package-lock.json
-├── src
-│   ├── basic.test.js
-│   └── index.js
+└── src
+    ├── basic.test.js
+    └── index.js
 ```
 
 And these are the scripts from the `package.json`:
 ```json
-"scripts": {
-  "start": "node dist/index.js",
-  "start-babel": "babel-node src/index.js",
-  "test": "mocha --require babel-core/register 'test/**/*.test.js'",
-  "tdd": "npm test -- --watch",
-  "build": "babel src -d dist",
-  "dev": "nodemon --watch src --exec babel-node src/index.js"
-}
+ "scripts": {
+    "start": "node <%= buildDirectory %>/index.js",
+    "start:babel": "babel-node src/index.js",
+    "test": "mocha --require babel-core/register '<%= testDirectory %>/**/*.test.js'",
+    "tdd": "npm test -- --watch",
+    "build": "babel src -d <%= buildDirectory %>",
+    "build:bytecode": "npm run build && nexe -i <%= buildDirectory %>/index.js -o <%= moduleName %>",
+    "dev": "nodemon --watch src --exec babel-node src/index.js"
+  },
 ```
 
 ## Installation
