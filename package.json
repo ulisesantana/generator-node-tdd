@@ -1,6 +1,6 @@
 {
   "name": "generator-node-tdd",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "A boilerplate for NodeJS projects with Mocha and Babel ",
   "homepage": "",
   "author": {
@@ -48,7 +48,6 @@
   "scripts": {
     "prepublish": "nsp check",
     "pretest": "eslint .",
-    "precommit": "lint-staged",
     "test": "jest"
   },
   "lint-staged": {
