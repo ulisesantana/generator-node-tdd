@@ -8,7 +8,9 @@
     "email": "ulisesantana@gmail.com",
     "url": "https://ulisesantana.github.io"
   },
-  "files": ["generators"],
+  "files": [
+    "generators"
+  ],
   "main": "generators/index.js",
   "keywords": [
     "boilerplate",
@@ -48,14 +50,23 @@
   "scripts": {
     "prepublish": "nsp check",
     "pretest": "eslint .",
-    "test": "jest"
+    "test": "mocha "
   },
   "lint-staged": {
-    "*.js": ["eslint --fix", "git add"],
-    "*.json": ["prettier --write", "git add"]
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "eslintConfig": {
-    "extends": ["xo", "prettier"],
+    "extends": [
+      "xo",
+      "prettier"
+    ],
     "env": {
       "jest": true,
       "node": true
@@ -69,7 +80,9 @@
         }
       ]
     },
-    "plugins": ["prettier"]
+    "plugins": [
+      "prettier"
+    ]
   },
   "repository": "ulisesantana/generator-node-tdd",
   "license": "MIT"

@@ -37,10 +37,9 @@ And these are the scripts from the `package.json`:
  "scripts": {
     "start": "node dist/index.js",
     "start:babel": "babel-node src/index.js",
-    "test": "mocha --require babel-core/register 'test/**/*.test.js'",
-    "tdd": "npm test -- --watch",
+    "test": "mocha --ui tdd --require babel-core/register 'test/**/*.test.js'",
+    "tdd": "npm test --watch",
     "build": "babel src -d dist",
-    "build:bytecode": "npm run build && nexe -i dist/index.js -o node-tdd",
     "dev": "nodemon --watch src --exec babel-node src/index.js"
   },
 ```
