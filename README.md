@@ -7,29 +7,37 @@ The posible structures of the boilerplate are the following ones:
 ```bash
 .
 ├── dist
-│   └── index.js
+│    ├── lib
+│    │    └── logger.js
+│    └── index.js
 ├── Dockerfile
 ├── node_modules
 ├── package.json
 ├── package-lock.json
 ├── src
-│   └── index.js
+│    ├── lib
+│    │    └── logger.js
+│    └── index.js
 └── test
-    └── basic.test.js
+     └── basic.test.js
 ```
 
 ```bash
 .
 ├── dist
-│   ├── basic.test.js
-│   └── index.js
+│    ├── lib
+│    │    └── logger.js
+│    ├── basic.test.js
+│    └── index.js
 ├── Dockerfile
 ├── node_modules
 ├── package.json
 ├── package-lock.json
 └── src
-    ├── basic.test.js
-    └── index.js
+     ├── lib
+     │    └── logger.js
+     ├── basic.test.js
+     └── index.js
 ```
 
 And these are the scripts from the `package.json`:
@@ -38,7 +46,7 @@ And these are the scripts from the `package.json`:
     "start": "node dist/index.js",
     "start:babel": "babel-node src/index.js",
     "test": "mocha --ui tdd --require babel-core/register 'test/**/*.test.js'",
-    "tdd": "npm test --watch",
+    "tdd": "npm test -- --watch",
     "build": "babel src -d dist",
     "dev": "nodemon --watch src --exec babel-node src/index.js"
   },

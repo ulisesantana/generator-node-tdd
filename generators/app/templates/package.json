@@ -7,7 +7,7 @@
     "start": "node <%= buildDirectory %>/index.js",
     "start:babel": "babel-node src/index.js",
     "test": "mocha --ui tdd --require babel-core/register '<%= testDirectory %>/**/*.test.js'",
-    "tdd": "npm test --watch",
+    "tdd": "npm test -- --watch",
     "build": "babel src -d <%= buildDirectory %>",
     "dev": "nodemon --watch src --exec babel-node src/index.js"
   },
@@ -17,10 +17,13 @@
   ],  
   "author": "<%= name %> <<%= email %>>",
   "license": "<%= moduleLicense %>",
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-node8": "^1.2.0",
-    "nodemon": "^1.12.1",
+  "dependencies": {
+    "winston": "2.4.1",
     "mocha": "^4.0.1"
+},
+"devDependencies": {
+  "babel-preset-node8": "^1.2.0",
+  "babel-cli": "^6.26.0",
+  "nodemon": "^1.12.1"
   }
 }

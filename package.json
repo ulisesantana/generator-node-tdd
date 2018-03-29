@@ -1,7 +1,7 @@
 {
   "name": "generator-node-tdd",
-  "version": "0.2.4",
-  "description": "A boilerplate for NodeJS projects with Mocha and Babel ",
+  "version": "0.3.0",
+  "description": "A boilerplate for NodeJS projects with Mocha and Babel",
   "homepage": "",
   "author": {
     "name": "Ulises Santana",

@@ -119,6 +119,8 @@ module.exports = class extends Generator {
     copy('gitignore', '.gitignore');
     copy('src/index.js', 'src/index.js');
     copy('test/basic.test.js', `${tpl.testDirectory}/basic.test.js`);
+    copy('src/lib/logger.js', 'src/lib/logger.js');
+
   }
 
   install() {

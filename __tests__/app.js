@@ -28,7 +28,8 @@ describe('generator-node-tdd:app', () => {
          '.babelrc',
          '.gitignore',
          'src/index.js',
-         'src/basic.test.js'
+         'src/basic.test.js',
+         'src/lib/logger.js'
        ]);
      } catch (err){
        assert.fail(err.actual, err.false, err.message);
